@@ -26,8 +26,14 @@ db.connect((err) => {
 
 // Close the connection
 
-app.post('/enter', async (req, res) => {
-    const { username, email, fullname, password } = req.body;
+    
+
+
+app.post('/verify', async (req, res) => {
+
+    const { username,  password } = req.body;
+    const email = ''; // Placeholder value
+    const fullname = ''; // Placeholder value
 
     
 
@@ -52,7 +58,7 @@ app.post('/enter', async (req, res) => {
         );
     } catch (error) {
         console.error(error);
-        return res.status(500).json({ error: 'Internal server error' });
+        return res.status().json({ error: 'Internal server error' });
     }
 });
 
